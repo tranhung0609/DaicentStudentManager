@@ -2,15 +2,14 @@ package com.daicent.model;
 
 public class Grade {
     private int id;
-
     private String name;
-
-    public Grade() {
-    }
 
     public Grade(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Grade() {
     }
 
     public int getId() {

@@ -2,15 +2,14 @@ package com.daicent.model;
 
 public class Subject {
     private int id;
-
     private String name;
-
-    public Subject() {
-    }
 
     public Subject(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Subject() {
     }
 
     public int getId() {

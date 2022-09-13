@@ -2,15 +2,14 @@ package com.daicent.model;
 
 public class Clazz {
     private int id;
-
     private String name;
-
-    public Clazz() {
-    }
 
     public Clazz(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Clazz() {
     }
 
     public int getId() {
