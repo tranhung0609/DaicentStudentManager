@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.Objects;
 import java.util.stream.Stream;
 
-public class Student implements Comparable<Student> {
+public class Student {
 
     private ArrayList<Student> students;
 
@@ -56,25 +56,5 @@ public class Student implements Comparable<Student> {
                 ", Age=" + age +
                 ", AvgScore=" + avgScore +
                 '}';
-    }
-
-
-    public void sortByPointAscen() {
-        Collections.sort(this.students, new Comparator<Student>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                if (o1.getAvgScore() < o2.getAvgScore()){
-                    return 1;
-                } else if (o1.getAvgScore()>o2.getAvgScore()) {
-                    return -1;
-                }
-                return 0;
-            }
-        });
-    }
-
-    @Override
-    public int compareTo(Student o) {
-        return this.name.compareTo(o.getName());
     }
 }
