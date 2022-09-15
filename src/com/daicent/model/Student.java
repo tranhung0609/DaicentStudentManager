@@ -1,10 +1,6 @@
 package com.daicent.model;
 
 import java.util.*;
-import java.util.function.Function;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Student {
 
@@ -28,7 +24,7 @@ public class Student {
         this.clazz = clazz;
     }
 
-    public Student() {
+    public Student(String hưng, int i, double v) {
     }
 
 
@@ -88,17 +84,6 @@ public class Student {
     }
 
     public static void main(String[] args) {
-//        Student student = new Student("abc", 22, 4);
-//        Student student1 = new Student("abcsd", 23, 5);
-//        Student student2 = new Student("abcsgxc", 24, 6);
-//
-//        List<Student> list = new ArrayList<>();
-//        list.add(student);
-//        list.add(student1);
-//        list.add(student2);
-//
-//        System.out.println(list);
-
     }
 
     private static <K, V> List<V> createListFromMapEntries(Map<K, V> map) {

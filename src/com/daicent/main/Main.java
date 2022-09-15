@@ -19,18 +19,18 @@ public class Main {
         LinkedList<Student> studentWithHighScore = new LinkedList<>();
         Map<School, Set<Grade>> schoolSetMap = new HashMap<>();
 
-//
-//        Student student1 = new Student("Hưng", 24, 5.5);
-//        Student student2 = new Student("Thuận", 54, 6);c
-//        Student student3 = new Student("Sơn", 44, 4.6);
-//        Student student4 = new Student("Hoa", 64, 3);
-//
-//        studentList.add(student1);
-//        studentList.add(student2);
-//        studentList.add(student3);
-//        studentList.add(student4);
 
-        System.out.println(studentList);
+        Student student1 = new Student("Hưng", 24, 5.5);
+        Student student2 = new Student("Thuận", 54, 6);
+        Student student3 = new Student("Sơn", 44, 4.6);
+        Student student4 = new Student("Hoa", 64, 3);
+
+        studentList.add(student1);
+        studentList.add(student2);
+        studentList.add(student3);
+        studentList.add(student4);
+
+        System.out.println(studentList.size());
 
         Grade grade1 = new Grade(1, "A");
         Grade grade2 = new Grade(2, "B");
@@ -83,6 +83,8 @@ public class Main {
         System.out.println("Thằng giỏi nhất lớp mà sử dụng map thành list");
 
         Map<Clazz, Student> map = new HashMap<>();
+
+        List<Student> list = new ArrayList<Student>();
         Clazz clazz1 = new Clazz(1, "A");
         Clazz clazz2 = new Clazz(2, "B");
         Clazz clazz3 = new Clazz(3, "C");
@@ -98,12 +100,29 @@ public class Main {
         map.put(clazz2, student5);
         map.put(clazz3, student8);
 
+
+        Map<Clazz, List<Student>> map1 = new HashMap<>();
+
         List<Student> result = createListFromMapEntries(map);
         List<Student> listWithoutDuplicateElements = result
                 .stream()
                 .distinct()
                 .collect(Collectors.toList());
         listWithoutDuplicateElements.forEach(System.out :: println);
+
+
+//        Map<Student, List<Clazz>> listMap = new HashMap<>();
+//        List<Clazz> clazzes = new ArrayList<>();
+//        for (Student sd : studentList) {
+//
+//        }
+
+
+
+
+        Map<Clazz, List<Student>> hashMap = new HashMap<Clazz, List<Student>>();
+
+
 
     }
     private static <Clazz, Student>  List<Student> createListFromMapEntries (Map<Clazz, Student> map){

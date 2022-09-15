@@ -75,8 +75,9 @@ public class Clazz {
 //        a.add(clazz3);
 //        a.add(clazz);
 //        System.out.println(a.size());
-//
-//
-//
 //    }
+
+    public static void main(String[] args) {
+
+    }
 }

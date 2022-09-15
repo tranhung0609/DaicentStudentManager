@@ -71,9 +71,11 @@ public class Classes {
 //        List<Student> result = createListFromMapEntries(map);
 //
 //        result.forEach(System.out :: println);
-//    }
-//
-//    private static <Clazz, Student>  List<Student> createListFromMapEntries (Map<Clazz, Student> map){
-//        return map.values().stream().collect(Collectors.toList());
     }
+
+    private static <Clazz, Student>  List<Student> createListFromMapEntries (Map<Clazz, Student> map){
+        return map.values().stream().collect(Collectors.toList());
+    }
+
+
 }
