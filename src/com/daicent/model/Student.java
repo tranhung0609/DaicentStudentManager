@@ -1,9 +1,9 @@
 package com.daicent.model;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Objects;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Student {
@@ -14,12 +14,27 @@ public class Student {
     private int age;
     private double avgScore;
 
+    private Clazz clazz;
+
+    public Student(Clazz clazz) {
+        this.clazz = clazz;
+    }
+
+    public Clazz getClazz() {
+        return clazz;
+    }
+
+    public void setClazz(Clazz clazz) {
+        this.clazz = clazz;
+    }
+
     public Student() {
     }
 
 
-    public Student(String name, int age, double avgScore) {
+    public Student(String name, Clazz clazz, int age, double avgScore) {
         this.name = name;
+        this.clazz = clazz;
         this.age = age;
         this.avgScore = avgScore;
     }
@@ -54,7 +69,39 @@ public class Student {
         return '\n' +
                 ", Name='" + name + '\'' +
                 ", Age=" + age +
-                ", AvgScore=" + avgScore +
+                ", AvgScore=" + avgScore +  "," + "Class : " + this.clazz +
+                ", " +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return age == student.age && Double.compare(student.avgScore, avgScore) == 0 && Objects.equals(students, student.students) && Objects.equals(name, student.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(students, name, age, avgScore);
+    }
+
+    public static void main(String[] args) {
+//        Student student = new Student("abc", 22, 4);
+//        Student student1 = new Student("abcsd", 23, 5);
+//        Student student2 = new Student("abcsgxc", 24, 6);
+//
+//        List<Student> list = new ArrayList<>();
+//        list.add(student);
+//        list.add(student1);
+//        list.add(student2);
+//
+//        System.out.println(list);
+
+    }
+
+    private static <K, V> List<V> createListFromMapEntries(Map<K, V> map) {
+        return new ArrayList<>(map.values());
     }
 }
