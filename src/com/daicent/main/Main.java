@@ -20,18 +20,6 @@ public class Main {
         Map<School, Set<Grade>> schoolSetMap = new HashMap<>();
 
 
-        Student student1 = new Student("Hưng", 24, 5.5);
-        Student student2 = new Student("Thuận", 54, 6);
-        Student student3 = new Student("Sơn", 44, 4.6);
-        Student student4 = new Student("Hoa", 64, 3);
-
-        studentList.add(student1);
-        studentList.add(student2);
-        studentList.add(student3);
-        studentList.add(student4);
-
-        System.out.println(studentList.size());
-
         Grade grade1 = new Grade(1, "A");
         Grade grade2 = new Grade(2, "B");
 
@@ -47,7 +35,7 @@ public class Main {
         schoolList.add(school1);
         schoolList.add(school2);
         schoolListMap.put(school1, studentList);
-        System.out.println(schoolListMap.values());
+//        System.out.println(schoolListMap.values());
         System.out.println("---------------");
 
 //        double maxScore = 0;
@@ -60,7 +48,7 @@ public class Main {
         Comparable comparable = new Comparable();
         Collections.sort(studentList, comparable);
         for (Student sd : studentList) {
-            System.out.println(sd.toString());
+//            System.out.println(sd.toString());
         }
 
 //        System.out.println("The best " + studentList.get(0));
@@ -75,12 +63,12 @@ public class Main {
                 avgSchool = sumSchool / listEntry.getValue().size();
 
             }
-            System.out.println("Avg of scholl " + avgSchool);
+//            System.out.println("Avg of scholl " + avgSchool);
 
         }
-
-        System.out.println("------------------------------------------------");
-        System.out.println("Thằng giỏi nhất lớp mà sử dụng map thành list");
+//
+//        System.out.println("------------------------------------------------");
+//        System.out.println("Thằng giỏi nhất lớp mà sử dụng map thành list");
 
         Map<Clazz, Student> map = new HashMap<>();
 
@@ -108,7 +96,7 @@ public class Main {
                 .stream()
                 .distinct()
                 .collect(Collectors.toList());
-        listWithoutDuplicateElements.forEach(System.out :: println);
+//        listWithoutDuplicateElements.forEach(System.out :: println);
 
 
 //        Map<Student, List<Clazz>> listMap = new HashMap<>();
@@ -121,6 +109,24 @@ public class Main {
 
 
         Map<Clazz, List<Student>> hashMap = new HashMap<Clazz, List<Student>>();
+
+        Subject subject1 = new Subject(1, "Toán");
+        Subject subject2 = new Subject(1, "Văn");
+        Subject subject3 = new Subject(1, "Anh");
+
+        subjectList.add(subject1);
+        subjectList.add(subject2);
+        subjectList.add(subject3);
+
+        double maxPoint = result.get(0).getAvgScore();
+        for (Student value : result) {
+            if (subjectList.contains(subject1)) {
+                if (maxPoint < value.getAvgScore()) {
+                    maxPoint = value.getAvgScore();
+                    System.out.println("cao điểm toán nhất lớp" + maxPoint);
+                }
+            }
+        }
 
 
 

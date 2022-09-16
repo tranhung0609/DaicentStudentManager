@@ -24,8 +24,6 @@ public class Student {
         this.clazz = clazz;
     }
 
-    public Student(String hưng, int i, double v) {
-    }
 
 
     public Student(String name, Clazz clazz, int age, double avgScore) {
